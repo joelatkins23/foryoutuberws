@@ -1,0 +1,72 @@
+@import "variables";
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-material.css";
+
+$table-row-even: #18202d;
+$table-row-odd: #162031;
+
+
+.main-cards.table-card .card-body {
+  padding: 0;
+}
+
+.ag-theme-material {
+  background-color: $bodycolor;
+  border-radius: 0.25rem;
+  height: 100%;
+}
+
+.ag-root {
+  border: none;
+  color: $white-primary !important;
+  border-radius: 0.25rem;
+}
+
+.ag-header {
+  background-color: $cardheadercolor !important;
+  text-transform: uppercase;
+  color: #999eab !important;
+  border: none !important;
+
+  .ag-header-cell {
+    line-height: 44px;
+    padding-right: 0;
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    .ag-header-cell-text {
+      font-size: 10px !important;
+    }
+  }
+}
+
+.ag-row {
+  border-color: rgba(92, 92, 92, 0.51) !important;
+  transition: all 1s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-image: linear-gradient(to right, rgba(26, 94, 112, 1), $table-row-even);
+  }
+  &.ag-row-even {
+    background-color: $table-row-even !important;
+    //border: none !important;
+  }
+
+  &.ag-row-even {
+    background-color: $table-row-even !important;
+  }
+
+  &.ag-row-odd {
+    background-color: $table-row-odd !important;
+  }
+
+  .ag-cell  {
+    overflow: visible;
+    line-height: 41px;
+    &, & span, & a {
+      font-size: 12px !important;
+    }
+  }
+}

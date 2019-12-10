@@ -1,0 +1,14 @@
+
+.ps__thumb-y {
+  background-color: #343843 !important;
+  width: 6px !important;
+  right: 0 !important;
+}
+.ps__rail-y {
+  opacity: 1 !important;
+  width: 6px !important;
+}
+
+.ps--active-x > .ps__rail-x, .ps--active-y > .ps__rail-y {
+  background-color: rgb(27, 36, 49) !important;
+}

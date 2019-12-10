@@ -1,0 +1,173 @@
+/**
+  * Gradient colors for highcharts
+  * This elements are defined in the
+  * TSCHart component in defs attribute
+  */
+
+// Odd chart columns
+#odd-col-gradient stop[offset="0"] {
+  stop-opacity: 1;
+  stop-color: $turquoise;
+}
+#odd-col-gradient stop[offset="1"] {
+  stop-opacity: 1;
+  stop-color: #007B69;
+
+}
+// Even chart columns
+#even-col-gradient stop[offset="0"] {
+  stop-opacity: 1;
+  stop-color: #fe4a93;
+}
+#even-col-gradient stop[offset="1"] {
+  stop-opacity: 1;
+  stop-color: #7a2f4d;
+}
+// Area chart
+#area-gradient stop {
+  stop-color: rgba(0, 100, 255, 0.5);
+}
+#area-gradient stop[offset="0"] {
+  stop-opacity: 0.8;
+}
+#area-gradient stop[offset="1"] {
+  stop-opacity: 0;
+}
+
+
+
+svg.highcharts-root {
+
+  .highcharts-background,
+  .highcharts-plot-background,
+  .highcharts-plot-border,
+  .highcharts-series {
+    fill: none;
+  }
+
+  g.highcharts-axis-labels,
+  g.highcharts-yaxis,
+  g.highcharts-xaxis,
+  g.highcharts-yaxis-grid,
+  g.highcharts-xaxis-grid,
+  g.highcharts-yaxis-grid path.highcharts-grid-line {
+    fill: $white;
+    stroke: $white;
+    opacity: 0.25;
+  }
+
+  g.highcharts-yaxis,
+  g.highcharts-xaxis-grid path.highcharts-grid-line {
+    stroke: none;
+  }
+
+  g.highcharts-series-group {
+
+    g.highcharts-series {
+
+      rect.highcharts-point.highcharts-color-0 {
+        stroke: none;
+
+        &:nth-child(odd) {
+          fill: url(#odd-col-gradient);
+        }
+        &:nth-child(even) {
+          fill: url(#even-col-gradient);
+        }
+
+      }
+      .highcharts-area {
+        fill: url(#area-gradient);
+      }
+      &.highcharts-area-series {
+
+        &.highcharts-color-0 {
+          path:nth-child(2) {
+            stroke: #00def9;
+            stroke-width: 1%;
+          }
+        }
+      }
+      &.highcharts-line-series {
+
+        &.highcharts-color-1 {
+          path {
+            &.highcharts-halo {
+              fill: #00def9;
+            }
+            &:nth-child(2) {
+              stroke: #00def9;
+              stroke-width: 0.2%;
+            }
+          }
+        }
+        &.highcharts-color-2 {
+          path {
+            &.highcharts-halo {
+              fill: #f38321;
+            }
+            &:nth-child(2) {
+              stroke: #f38321;
+              stroke-width: 0.2%;
+            }
+          }
+        }
+        &.highcharts-color-3 {
+          path {
+            &.highcharts-halo {
+              fill: #00f6d1;
+            }
+            &:nth-child(2) {
+              stroke: #00f6d1;
+              stroke-width: 0.2%;
+            }
+          }
+        }
+        &.highcharts-color-4 {
+          path {
+            &:nth-child(2) {
+              stroke: #00f6d9;
+              stroke-width: 0.2%;
+              stroke-dasharray: 5, 7;
+            }
+          }
+        }
+      }
+
+    }
+    g.highcharts-markers {
+      path.highcharts-point {
+        display: none;
+      }
+
+      path.highcharts-halo {
+        fill: #00def9;
+        opacity: 0.5;
+        transition: all .14s ease;
+      }
+
+    }
+  }
+
+  .highcharts-tooltip {
+    .highcharts-tooltip-box {
+      fill: $bodycolor;
+      stroke: #007B69;
+      stroke-width: 2px;
+    }
+    text {
+      fill: $white;
+    }
+  }
+
+  text.highcharts-credits {
+    display: none;
+  }
+}
+
+.main-card.highchart {
+  .card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
